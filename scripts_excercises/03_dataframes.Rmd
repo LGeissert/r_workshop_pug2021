@@ -201,7 +201,7 @@ The disadvantage is that you have to type the whole column name yourself, but th
 [^4]: You will later see some examples how you might want to use column names that you generated somewhere else. For now, this does not concern us.
 
 ```{r}
-data.frame$
+head(nerd[["age"]],10)
 # select the age column using [[]]
 ```
 
@@ -212,7 +212,7 @@ This time, it's two numbers: The first for the rows and the second for the colum
 So with this code, we get the first row of `nerd`.
 
 ```{r}
-
+nerd[1,]
 # select the first row of nerd
 ```
 
@@ -222,6 +222,7 @@ Note that we leave the second position blank when we want the whole row, but tha
 
 ```{r}
 # select the third column of nerd
+head(nerd[,3],10)
 ```
 
 Once again, selecting a single column will give us a vector.
@@ -232,6 +233,7 @@ For example, we can select the number at the third row and the first column like
 
 ```{r}
 # select the value in the third row and the first column
+nerd[3,1]
 ```
 
 We can also change values in our data frame in the same manner by assigning new values to them.
@@ -241,11 +243,14 @@ So we want to save our `nerd` data into a new variable, so we can mess around wi
 
 ```{r}
 # Save the nerd data into a new variable that you can mess around with
+mess_around <- nerd
 ```
 
 Now, let's overwrite the value in the first row and second column with 999.
 
 ```{r}
+mess_around[1,2] <- 999
+head(mess_around)
 # Overwrite the value in the first row and second column with 999.
 ```
 
